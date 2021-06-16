@@ -12,6 +12,11 @@ scheduler = APScheduler()
 s_id = []
 
 
+@app.route('/test', methods=['GET'])
+def test():
+    return {'resp': 'lol'}
+
+
 @app.route('/covid', methods=['GET'])
 def call():
     global s_id
@@ -36,7 +41,7 @@ def call():
 
         return proresp, 200
     else:
-
+        print('gone lol')
         a = {'error': 'no scene'}
         return a, 403
 
