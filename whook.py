@@ -12,10 +12,10 @@ scheduler = APScheduler()
 s_id = []
 
 
-@app.route('/test', methods=['GET'])
+'''@app.route('/test', methods=['GET'])
 def test():
     a = {'resp': 'lol'}
-    return a
+    return a'''
 
 
 @app.route('/covid', methods=['GET'])
