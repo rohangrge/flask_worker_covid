@@ -10,7 +10,8 @@ pipeline {
 
         stage('changing build id'){
             steps{
-                sh 'JENKINS_NODE_COOKIE=dontKillMe'
+                sh 'export JENKINS_NODE_COOKIE=dontKillMe'
+                sh 'export BUILD_ID=dontKillMe'
             }
             
             
