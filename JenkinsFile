@@ -12,6 +12,9 @@ pipeline {
             steps{
                 sh 'export JENKINS_SERVER_COOKIE=dontKillMe'
             }
+            steps{
+                sh 'export BUILD_ID=dontKillMe'
+            }
             
         }
 
