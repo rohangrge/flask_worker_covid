@@ -18,20 +18,8 @@ pipeline {
         stage('Stopping earlier worker'){
             steps{
                 sh '''
-                pkill -f whook.py
-pkillexitstatus=$?
-
-if [ $pkillexitstatus -eq 0 ]; then
-    echo "one or more processes matched the criteria"
-elif [ $pkillexitstatus -eq 1]; then
-    echo "no processes matched"
-elif [ $pkillexitstatus -eq 2]; then
-    echo "syntax error in the command line"
-elif [ $pkillexitstatus -eq 3]; then
-    echo "fatal error"
-else
-    echo UNEXPECTED
-fi '''
+                pkill -f whook.py || true
+ '''
 
 
             }
