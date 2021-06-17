@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage ('installing requirements'){
+            sh 'pip3 -r install requirements.txt'
+        }
+
+        stage('changing build id'){
+            sh 'export JENKINS_SERVER_COOKIE=dontKillMe'
+        }
+
+        stage('Stopping earlier worker'){
+            sh "pkill -f 'whook.py' "
+        }
+
+        stage('starting updated worker'){
+            sh 'nohup python3 whook.py > $WORKSPACE/scriptOutput.txt 2>&1 &'
+        }
+    }
+}
