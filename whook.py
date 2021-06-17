@@ -14,7 +14,7 @@ s_id = []
 
 @app.route('/test', methods=['GET'])
 def test():
-    a = {'resp': 'lol'}
+    a = {'resp': 'lololololoo'}
     return a
 
 
