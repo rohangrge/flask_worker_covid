@@ -43,7 +43,7 @@ def call():
         return proresp, 200
     else:
         print('gone lol')
-        a = {'error': 'no scene'}
+        a = {'error': 'no pradish scene'}
         return a, 403
 
 
